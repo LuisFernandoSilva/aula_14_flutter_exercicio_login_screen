@@ -8,4 +8,4 @@ Row, Column, Icon, Text e Container.
 
 Lembrando que os campos "Username" e "Password" não são editáveis, e sim Containers estilizados....  
 imagem exemplo:</h6>
-![atividade](https://user-images.githubusercontent.com/37556159/86279462-6d438080-bbb0-11ea-8c02-da2494aea1bf.PNG)
+![atividade](https://user-images.githubusercontent.com/37556159/86280328-f27b6500-bbb1-11ea-9694-6b4bd09254fd.PNG)
