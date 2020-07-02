@@ -23,62 +23,9 @@ class _LoginPageState extends State<LoginPage> {
                   textAlign: TextAlign.center,
                 ),
                 //username
-                Container(
-                  height: 70,
-                  width: 280,
-                  margin: EdgeInsets.fromLTRB(20, 10, 20, 2),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(100),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: <Widget>[
-                        Icon(
-                          Icons.person_outline,
-                          color: Colors.red,
-                        ),
-                        Text(
-                          ' Username',
-                          style: TextStyle(
-                              fontSize: 25,
-                              color: Colors.grey,
-                              fontStyle: FontStyle.italic),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                inputs('Username', Icons.person_outline),
                 //password
-                Container(
-                  height: 70,
-                  width: 280,
-                  margin: EdgeInsets.fromLTRB(20, 10, 20, 2),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(100),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: <Widget>[
-                        Icon(
-                          Icons.lock_outline,
-                          color: Colors.red,
-                        ),
-                        Text(
-                          ' Password',
-                          style: TextStyle(
-                              fontSize: 25,
-                              color: Colors.grey,
-                              fontStyle: FontStyle.italic),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                inputs('Password', Icons.lock_outline),
                 //remenber me
                 Row(
                   children: <Widget>[
@@ -105,31 +52,56 @@ class _LoginPageState extends State<LoginPage> {
                 //login button
                 GestureDetector(
                   child: Container(
-                    height: 70,
-                    width: 280,
-                    margin: EdgeInsets.fromLTRB(20, 10, 20, 2),
-                    decoration: BoxDecoration(
-                      gradient:
-                          LinearGradient(colors: [Colors.red, Colors.orange]),
-                      color: Colors.red[100],
-                      borderRadius: BorderRadius.circular(100),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
+                      height: 60,
+                      width: 280,
+                      margin: EdgeInsets.fromLTRB(20, 10, 20, 2),
+                      decoration: BoxDecoration(
+                        gradient:
+                            LinearGradient(colors: [Colors.red, Colors.orange]),
+                        color: Colors.red[100],
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                      child: Center(
+                        child: Text(
                           'LOGIN',
                           style: TextStyle(
                             fontSize: 26,
                             color: Colors.white,
                           ),
                         ),
-                      ],
-                    ),
-                  ),
+                      )),
                   onTap: () => print('teste botão login'),
                 ),
               ]),
         ));
   }
+}
+
+Widget inputs(String text, IconData icons) {
+  return Container(
+    height: 70,
+    width: 280,
+    margin: EdgeInsets.fromLTRB(20, 10, 20, 2),
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(100),
+    ),
+    child: Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          Icon(
+            icons,
+            color: Colors.red,
+          ),
+          Text(
+            text,
+            style: TextStyle(
+                fontSize: 25, color: Colors.grey, fontStyle: FontStyle.italic),
+          ),
+        ],
+      ),
+    ),
+  );
 }
